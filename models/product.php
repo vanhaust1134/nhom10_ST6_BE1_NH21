@@ -19,7 +19,7 @@ class Product extends Db
     }
     public function getProductNew($id)
     {
-        $sql = self::$connection->prepare("SELECT * FROM products WHERE id = ?");
+        $sql = self::$connection->prepare("SELECT * FROM products ORDER BY ASC LIMIT 0,10");
         $sql->bind_param("i", $id);
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);

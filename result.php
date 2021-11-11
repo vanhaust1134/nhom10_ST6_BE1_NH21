@@ -245,9 +245,7 @@ include "header.php";
                         $keyword = $_GET['keyword'];
                         $search = $product->search($keyword);
                         foreach ($search as $value) :
-
                     ?>
-
                             <!-- product -->
                             <div class="col-md-4 col-xs-6">
                                 <div class="product">
