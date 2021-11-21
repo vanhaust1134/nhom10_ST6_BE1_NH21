@@ -244,7 +244,12 @@ include "header.php";
                     if (isset($_GET['keyword'])):
                         $keyword = $_GET['keyword'];
                         $search = $product->search($keyword);
-                        foreach ($search as $value) :
+                        $perPage = 3;
+						$page = isset($_GET['page'])?$_GET['page']:1; 			
+						$total = count($search);
+						$url = $_SERVER['PHP_SELF']."?keyword=".$keyword;
+						$get3ProductsByKey = $product->get3ProductsByKey($keyword, $page, $perPage,$page);
+						foreach($get3ProductsByKey as $value):
                     ?>
                             <!-- product -->
                             <div class="col-md-4 col-xs-6">
@@ -283,8 +288,6 @@ include "header.php";
                         endforeach;
                     endif
                     ?>
-
-
                 </div>
                 <!-- /store products -->
 

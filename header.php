@@ -6,6 +6,7 @@ require "models/protype.php";
 $protype = new Protype;
 $product = new Product;
 $getAllProducts = $product->getAllProducts();
+$getAll10Products = $product->getAll10Products();
 ?>
 <!DOCTYPE html>
 <html lang="en">

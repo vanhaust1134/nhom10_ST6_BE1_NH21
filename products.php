@@ -241,7 +241,7 @@
 							if(isset($_GET['type_id'])):
 								$type_id = $_GET['type_id'];
 								$getProductsByType = $product->getProductsByType($type_id);
-								$perPage = 3; 				
+								$perPage = 3;
 								$page = isset($_GET['page'])?$_GET['page']:1; 			
 								$total = count($getProductsByType);
 								$url = $_SERVER['PHP_SELF']."?type_id=".$type_id;
