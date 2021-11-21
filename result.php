@@ -286,23 +286,19 @@ include "header.php";
                             <!-- /product -->
                     <?php
                         endforeach;
-                    endif
                     ?>
                 </div>
                 <!-- /store products -->
 
                 <!-- store bottom filter -->
                 <div class="store-filter clearfix">
-                    <span class="store-qty">Showing 20-100 products</span>
-                    <ul class="store-pagination">
-                        <li class="active">1</li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
-                    </ul>
-                </div>
+					<span class="store-qty">Showing 20-100 products</span>
+					<ul class="store-pagination">
+						<?php echo $product->paginate($url, $total, $perPage,$page); ?>
+					</ul>
+				</div>
                 <!-- /store bottom filter -->
+                <?php endif ; ?>
             </div>
             <!-- /STORE -->
         </div>

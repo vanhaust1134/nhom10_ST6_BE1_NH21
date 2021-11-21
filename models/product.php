@@ -49,6 +49,30 @@ class Product extends Db
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
         return $items; //return an array
     }
+    public function getProductsByDT()
+    {
+        $sql = self::$connection->prepare("SELECT * FROM products WHERE type_id = 1 LIMIT 3");
+        $sql->execute(); //return an object
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
+    public function getProductsByLT()
+    {
+        $sql = self::$connection->prepare("SELECT * FROM products WHERE type_id = 2 LIMIT 3");
+        $sql->execute(); //return an object
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
+    public function getProductsByBP()
+    {
+        $sql = self::$connection->prepare("SELECT * FROM products WHERE type_id = 5 LIMIT 3");
+        $sql->execute(); //return an object
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items; //return an array
+    }
     public function getProductsById($id)
     {
         $sql = self::$connection->prepare("SELECT * FROM products WHERE id = ?");
@@ -65,6 +89,8 @@ class Product extends Db
         $sql = self::$connection->prepare("SELECT * FROM products
         WHERE type_id = ? LIMIT ?, ?");
         $sql->bind_param("iii", $type_id, $firstLink, $perPage);
+        var_dump("SELECT * FROM products
+        WHERE type_id = '$type_id' LIMIT $firstLink, $perPage");
         $sql->execute(); //return an object
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
@@ -75,9 +101,9 @@ class Product extends Db
         // Tính số thứ tự trang bắt đầu
         $firstLink = ($page - 1) * $perPage;
         $sql = self::$connection->prepare("SELECT * FROM products 
-        WHERE `name` LIKE ?");
+        WHERE `name` LIKE ? LIMIT ?, ?");
         $keyword = "%$keyword%";
-        $sql->bind_param("iii", $keyword, $firstLink, $perPage);
+        $sql->bind_param("sii", $keyword, $firstLink, $perPage);
         $sql->execute(); //return an object
         $items = array();
         $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);

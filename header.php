@@ -7,6 +7,9 @@ $protype = new Protype;
 $product = new Product;
 $getAllProducts = $product->getAllProducts();
 $getAll10Products = $product->getAll10Products();
+$getProductsByDT = $product->getProductsByDT();
+$getProductsByLT = $product->getProductsByLT();
+$getProductsByBP = $product->getProductsByBP();
 ?>
 <!DOCTYPE html>
 <html lang="en">
