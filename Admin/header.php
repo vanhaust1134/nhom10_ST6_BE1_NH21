@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 require "config.php";
 require "Models/db.php";
 require "Models/product.php";
@@ -244,6 +247,12 @@ $protype = new protype;
             <a href="protypes.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>Protype</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="addproduct.php" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>Add Product</p>
             </a>
           </li>
         </ul>

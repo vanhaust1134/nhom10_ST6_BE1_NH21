@@ -58,7 +58,7 @@
                       <th style="width: 8%" class="text-center">
                           Protype
                       </th>
-                      <!-- <th style="width: 8%" class="text-center">
+                      <th style="width: 8%" class="text-center">
                           Description
                       </th>
                       <th style="width: 8%" class="text-center">
@@ -66,7 +66,7 @@
                       </th>
                       <th style="width: 8%" class="text-center">
                           Created at
-                      </th> -->
+                      </th>
                       <th style="width: 15%" class="text-center">
                           Action
                       </th>
@@ -84,16 +84,16 @@
                       <td class="project_progress"><?php echo number_format($value['price']) ?> VND</td>
                       <td class="project-state"><?php echo $value['manu_name'] ?></td>
                       <td class="project-state"><?php echo $value['type_name'] ?></td>
-                      <!-- <td class="project-state"><?php echo $value['description'] ?></td>
+                      <td class="project-state"><?php echo $value['description'] ?></td>
                       <td class="project-state"><?php echo $value['feature'] ?></td>
-                      <td class="project-state"><?php echo $value['created_at'] ?></td> -->
+                      <td class="project-state"><?php echo $value['created_at'] ?></td>
                       <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" href="#">
+                          <a class="btn btn-info btn-sm" href="menuEdit.php?id=<?php echo $value ['id'] ?>">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
                           </a>
-                          <a class="btn btn-danger btn-sm" href="#">
+                          <a class="btn btn-danger btn-sm" href="del.php?id=<?php echo $value['id'] ?>">
                               <i class="fas fa-trash">
                               </i>
                               Delete

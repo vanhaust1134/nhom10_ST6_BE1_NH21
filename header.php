@@ -116,9 +116,11 @@ $getProductsByBP = $product->getProductsByBP();
 								<!-- Cart -->
 								<div class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<a href="shopcart.php">
 										<i class="fa fa-shopping-cart"></i>
 										<span>Your Cart</span>
 										<div class="qty">3</div>
+										</a>
 									</a>
 									<div class="cart-dropdown">
 										<div class="cart-list">
