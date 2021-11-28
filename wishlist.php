@@ -1,17 +1,12 @@
 <?php
 session_start();
-//session_destroy();
-if(isset($_SESSION['cart'])){
-	//echo "<pre />";
-	var_dump($_SESSION['cart']);
-}
 ?>
 <?php
 include "header.php";
 ?>
 
 <!-- CART -->
-<h1 class="shop-cart">Your Cart</h1>
+<h1 class="shop-cart">Your Wishlist</h1>
 
 <div class="shopping-cart">
 
@@ -28,25 +23,6 @@ include "header.php";
     if(isset($_GET['id'])):
         $id = $_GET['id'];
         $getProductsById = $product->getProductsById($id);
-        //$_SESSION['cart'][$id] = $getProductsById;
-        if(isset($_SESSION['cart']))
-        {
-            if(isset($_SESSION['cart'][$id])){
-                $_SESSION['cart'][$id]['qty']++;
-            }
-            else
-            {
-                $_SESSION['cart'][$id]['qty']= 1;
-            }
-            $_SESSION['success']='Thêm thành công';
-
-        }
-        else
-        {
-            $_SESSION['cart'][$id] = $getProductsById;
-            $_SESSION['success']='Tạo mới thành công';
-        }
-            
             foreach ($getProductsById as $value):
 ?>
     <div class="products">
@@ -71,24 +47,6 @@ include "header.php";
     <?php endforeach; endif;
     ?>
 
-    <div class="totals">
-        <div class="totals-item">
-            <label>Subtotal</label>
-            <div class="totals-value" id="cart-subtotal">71.97</div>
-        </div>
-        <div class="totals-item">
-            <label>Tax (5%)</label>
-            <div class="totals-value" id="cart-tax">3.60</div>
-        </div>
-        <div class="totals-item">
-            <label>Shipping</label>
-            <div class="totals-value" id="cart-shipping">15.00</div>
-        </div>
-        <div class="totals-item totals-item-total">
-            <label>Grand Total</label>
-            <div class="totals-value" id="cart-total">90.57</div>
-        </div>
-    </div>
     <div class="check">
         <a href="index.php">
         <button class="checkout">Back</button>

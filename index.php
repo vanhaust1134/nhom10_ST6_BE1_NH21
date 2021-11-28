@@ -1,4 +1,11 @@
-
+<?php
+session_start();
+//session_destroy();
+if(isset($_SESSION['cart'])){
+	//echo "<pre />";
+	//var_dump($_SESSION['cart']);
+}
+?>
 <?php
 include "header.php";
 ?>
@@ -16,7 +23,7 @@ include "header.php";
 							</div>
 							<div class="shop-body">
 								<h3>Laptop<br>Collection</h3>
-								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="collection.php?type_id=2" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -62,11 +69,16 @@ include "header.php";
 			<div class="container">
 				<!-- row -->
 				<div class="row">
-
 					<!-- section title -->
 					<div class="col-md-12">
 						<div class="section-title">
 							<h3 class="title">New Products</h3>
+							<?php
+							if(isset($_SESSION['success'])) :
+							?>
+							<p class="text-danger"><?= $_SESSION['success'] ?></p>
+
+							<?php endif;unset($_SESSION['success']) ?>
 							<div class="section-nav">
 								<ul class="section-tab-nav tab-nav">
 									<li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
@@ -111,9 +123,11 @@ include "header.php";
 													<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
 												</div>
 											</div>
+											<a href="shopcart.php?id=<?php echo $value ['id'] ?>">
 											<div class="add-to-cart">
-												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+												<button class="add-to-cart-btn"><i class="fa fa-shopping-cart" ></i>add to cart</button>
 											</div>
+											</a>
 										</div>
 										<!-- /product -->
 										<?php endforeach?>

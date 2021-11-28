@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
 require "config.php";
 require "Models/db.php";
 require "Models/product.php";
