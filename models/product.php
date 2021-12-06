@@ -125,4 +125,24 @@ class Product extends Db
      	return $link;
     }
 
+    public function detailProduct($id)
+    {
+        $sql = self::$connection->prepare("SELECT * FROM products WHERE id = ?");
+        $sql->bind_param("i", $id);
+        $sql->execute();
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items;
+    }
+
+    function getRelatedProducts()
+    {
+        $sql = self::$connection->prepare("SELECT * FROM `products`, `manufactures` 
+        WHERE `products`.`id` = `manufactures`.`manu_id` ORDER BY RAND() LIMIT 0, 4;");
+        $sql->execute();
+        $items = array();
+        $items = $sql->get_result()->fetch_all(MYSQLI_ASSOC);
+        return $items;
+    }
+
 }
