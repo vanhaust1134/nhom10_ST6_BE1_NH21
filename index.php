@@ -23,7 +23,7 @@ include "header.php";
 							</div>
 							<div class="shop-body">
 								<h3>Laptop<br>Collection</h3>
-								<a href="collection.php?type_id=2" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="collectionLT.php?type_id=2" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -37,7 +37,7 @@ include "header.php";
 							</div>
 							<div class="shop-body">
 								<h3>Accessories<br>Collection</h3>
-								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="collectionLT.php?type_id=3" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -51,7 +51,7 @@ include "header.php";
 							</div>
 							<div class="shop-body">
 								<h3>Cameras<br>Collection</h3>
-								<a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+								<a href="" onclick="alert('Mặt hàng đã hết kinh doanh')" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
 							</div>
 						</div>
 					</div>
@@ -323,9 +323,9 @@ include "header.php";
 								<div id="slick-nav-3" class="products-slick-nav"></div>
 							</div>
 						</div>
-
+						
 						<?php foreach($getProductsByDT as $value): ?>
-						<div class="products-widget-slick" data-nav="#slick-nav-3">
+						<div class="products-widget-slick" >
 							<div>
 								<!-- product widget -->
 								<div class="product-widget">
@@ -368,7 +368,7 @@ include "header.php";
 						</div>
 
 						<?php foreach($getProductsByLT as $value): ?>
-						<div class="products-widget-slick" data-nav="#slick-nav-3">
+						<div class="products-widget-slick">
 							<div>
 								<!-- product widget -->
 								<div class="product-widget">
@@ -408,93 +408,30 @@ include "header.php";
 						<div class="section-title">
 							<h4 class="title">Top selling</h4>
 							<div class="section-nav">
-								<div id="slick-nav-5" class="products-slick-nav"></div>
+								<div id="slick-nav-4" class="products-slick-nav"></div>
 							</div>
 						</div>
 
-						<div class="products-widget-slick" data-nav="#slick-nav-5">
+						<?php foreach($getProductsByBP as $value): ?>
+						<div class="products-widget-slick">
 							<div>
 								<!-- product widget -->
 								<div class="product-widget">
 									<div class="product-img">
-										<img src="./img/product01.png" alt="">
+										<img src="./img/<?php echo $value['image'] ?>" alt="">
 									</div>
 									<div class="product-body">
 										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
+										<h3 class="product-name"><a href="#"><?php echo $value['name'] ?></a></h3>
+										<h4 class="product-price"><?php echo number_format($value['price']) ?></h4>
 									</div>
 								</div>
 								<!-- /product widget -->
-
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product02.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
-
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product03.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- product widget -->
 							</div>
 
-							<div>
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product04.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
-
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product05.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- /product widget -->
-
-								<!-- product widget -->
-								<div class="product-widget">
-									<div class="product-img">
-										<img src="./img/product06.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name"><a href="#">product name goes here</a></h3>
-										<h4 class="product-price">$980.00 <del class="product-old-price">$990.00</del></h4>
-									</div>
-								</div>
-								<!-- product widget -->
-							</div>
+							
 						</div>
+						<?php endforeach ?>
 					</div>
 
 				</div>
