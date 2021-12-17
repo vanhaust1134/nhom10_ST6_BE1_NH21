@@ -83,7 +83,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="inputProjectLeader">Image</label>
-                                <input type="file" name="image" id="inputProjectLeader" class="form-control" name="img" value="<?php echo $values['image'] ?>"?>
+                                <input type="file" name="image" id="inputProjectLeader" class="form-control" name="img" file="<?php echo $values['image'] ?>"?>
+                                <input type="text" name="image2" id="inputProjectLeader" class="form-control" name="img" value="<?php echo $values['image'] ?>"?>
                                 <img style="width:100px;height:100px" src="../img/<?php echo $values['image'] ?>" alt="">
                             </div>
                             <div class="form-group">

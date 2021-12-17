@@ -179,9 +179,13 @@ $protype = new protype;
           <i class="fas fa-th-large"></i>
         </a>
       </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="logout.php" class="nav-link">Log out</a>
-      </li>
+      <form action="logout.php" method="post" enctype="multipart/form-data">
+        <li class="nav-item d-none d-sm-inline-block">
+        <div class="form-group">
+							<input type="submit" value="Log out" class="btn float-right login_btn" name="submit">
+						</div>
+        </li>
+      </form>
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -256,6 +260,18 @@ $protype = new protype;
             <a href="addproduct.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>Add Product</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="addprotype.php" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>Add Protype</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="addmanu.php" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>Add manufacture</p>
             </a>
           </li>
         </ul>

@@ -84,7 +84,7 @@
                       <td class="project_progress"><?php echo number_format($value['price']) ?> VND</td>
                       <td class="project-state"><?php echo $value['manu_name'] ?></td>
                       <td class="project-state"><?php echo $value['type_name'] ?></td>
-                      <td class="project-state"><?php echo $value['description'] ?></td>
+                      <td class="project-state"><?php echo substr($value['description'],0,100) ?></td>
                       <td class="project-state"><?php echo $value['feature'] ?></td>
                       <td class="project-state"><?php echo $value['created_at'] ?></td>
                       <td class="project-actions text-right">

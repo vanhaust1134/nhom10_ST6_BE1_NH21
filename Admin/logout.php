@@ -1,5 +1,7 @@
 <?php
-if(!isset($_SESSION['user'])){
-    session_destroy();
-}
+    session_start();
+    if (isset($_SESSION['username'])) {
+        unset($_SESSION['username']);
+    }   
+    header('location:../login/index.php');                   
 ?>
