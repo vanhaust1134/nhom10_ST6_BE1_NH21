@@ -17,5 +17,13 @@ Class User extends Db{
             return false;
         }
     }
+    public function addUser($username,$password)
+    {
+        $sql = self::$connection->prepare("INSERT INTO `users`(`username`,`password`) 
+        VALUES (?,?)");
+        $password = md5($password);
+        $sql->bind_param("ss", $username,$password);
+        return $sql->execute(); //return an object
+    }
 }
 ?>
