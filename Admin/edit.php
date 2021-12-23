@@ -27,5 +27,9 @@ if(isset($_POST['submit'])){
     $target_dir = "../img/";
     $target_file = $target_dir . basename($_FILES["image"]["name"]);
     move_uploaded_file($_FILES["image"]["tmp_name"],$target_file);
+<<<<<<< HEAD
     header('location:products.php');
+=======
+    header('Location: http://localhost:8080/nhom10/Admin/products.php');
+>>>>>>> bb423c1ac9d843fbd33483c2cc2b4f7d9d1e7a52
 }

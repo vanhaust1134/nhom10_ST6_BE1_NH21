@@ -25,10 +25,7 @@ include "header.php";
     </div>
 
     <?php
-    if(isset($_GET['id'])):
-        $id = $_GET['id'];
-        $getProductsById = $product->getProductsById($id);
-        //$_SESSION['cart'][$id] = $getProductsById;
+        $id = isset($_GET['id']) ? $_GET['id'] : '';
         if(isset($_SESSION['cart']))
         {
             if(isset($_SESSION['cart'][$id])){
@@ -36,18 +33,19 @@ include "header.php";
             }
             else
             {
-                $_SESSION['cart'][$id]['qty']= 1;
+                $_SESSION['cart'][$id]['qty'] = 1;
             }
             $_SESSION['success']='Thêm thành công';
 
         }
         else
         {
-            $_SESSION['cart'][$id] = $getProductsById;
+            $_SESSION['cart'][$id] = 1;
             $_SESSION['success']='Tạo mới thành công';
         }
-            
-            foreach ($getProductsById as $value):
+        $getProductsById = $product->getProductsById($id);
+        $_SESSION['cart'][$id] = $getProductsById;
+        foreach($_SESSION['cart'][$id] as $value):
 ?>
     <div class="products">
         <div class="product-image1">
@@ -57,9 +55,15 @@ include "header.php";
             <div class="product-title1"><?php echo $value['name'] ?></div>
             <p class="product-description1"><?php echo $value['description'] ?></p>
         </div>
+<<<<<<< HEAD
         <div class="product-price1"><?php echo $value['price'] ?></div>
         <div class="product-quantity1">
             <input type="number" value="2" min="1">
+=======
+        <div class="product-price"><?php echo $value['price'] ?></div>
+        <div class="product-quantity">
+            <input type="number" value=<?php echo $_SESSION['cart'][$id]['qty'] ?> min="1">
+>>>>>>> bb423c1ac9d843fbd33483c2cc2b4f7d9d1e7a52
         </div>
         <div class="product-removal1">
             <button class="remove-product1">
@@ -68,7 +72,7 @@ include "header.php";
         </div>
         <div class="product-line-price1"><?php echo number_format($value['price']) ?></div>
     </div>
-    <?php endforeach; endif;
+    <?php endforeach;
     ?>
 
     <div class="totals">

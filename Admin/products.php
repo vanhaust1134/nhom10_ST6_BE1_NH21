@@ -84,8 +84,13 @@
                       <td class="project_progress"><?php echo number_format($value['price']) ?> VND</td>
                       <td class="project-state"><?php echo $value['manu_name'] ?></td>
                       <td class="project-state"><?php echo $value['type_name'] ?></td>
+<<<<<<< HEAD
                       <td class="project-state"><?php echo $value['description'] ?></td>
                       <!-- <td class="project-state"><?php echo $value['feature'] ?></td> -->
+=======
+                      <td class="project-state"><?php echo substr($value['description'],0,100) ?></td>
+                      <td class="project-state"><?php echo $value['feature'] ?></td>
+>>>>>>> bb423c1ac9d843fbd33483c2cc2b4f7d9d1e7a52
                       <td class="project-state"><?php echo $value['created_at'] ?></td>
                       <td class="project-actions text-right">
                           <a class="btn btn-info btn-sm" href="editproduct.php?id=<?php echo $value ['id'] ?>">

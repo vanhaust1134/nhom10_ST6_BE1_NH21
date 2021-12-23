@@ -157,7 +157,7 @@ $protype = new protype;
           </a>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <i class="fas fa-users mr-2"></i> 7 friend requests
             <span class="float-right text-muted text-sm">12 hours</span>
           </a>
           <div class="dropdown-divider"></div>
@@ -183,7 +183,18 @@ $protype = new protype;
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
           <i class="fas fa-th-large"></i>
         </a>
+<<<<<<< HEAD
       </li> -->
+=======
+      </li>
+      <form action="logout.php" method="post" enctype="multipart/form-data">
+        <li class="nav-item d-none d-sm-inline-block">
+        <div class="form-group">
+							<input type="submit" value="Log out" class="btn float-right login_btn" name="submit">
+						</div>
+        </li>
+      </form>
+>>>>>>> bb423c1ac9d843fbd33483c2cc2b4f7d9d1e7a52
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -261,9 +272,21 @@ $protype = new protype;
             </a>
           </li>
           <li class="nav-item">
+<<<<<<< HEAD
             <a href="menuEdit.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>Edit Product</p>
+=======
+            <a href="addprotype.php" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>Add Protype</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="addmanu.php" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>Add manufacture</p>
+>>>>>>> bb423c1ac9d843fbd33483c2cc2b4f7d9d1e7a52
             </a>
           </li>
         </ul>
