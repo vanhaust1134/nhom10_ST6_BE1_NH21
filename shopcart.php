@@ -13,15 +13,15 @@ include "header.php";
 <!-- CART -->
 <h1 class="shop-cart">Your Cart</h1>
 
-<div class="shopping-cart">
+<div class="shopping-cart1">
 
-    <div class="column-labels">
-        <label class="product-image">Image</label>
-        <label class="product-details">Product</label>
-        <label class="product-price">Price</label>
-        <label class="product-quantity">Quantity</label>
-        <label class="product-removal">Remove</label>
-        <label class="product-line-price">Total</label>
+    <div class="column-labels1">
+        <label class="product-image1">Image</label>
+        <label class="product-details1">Product</label>
+        <label class="product-price1">Price</label>
+        <label class="product-quantity1">Quantity</label>
+        <label class="product-removal1">Remove</label>
+        <label class="product-line-price1">Total</label>
     </div>
 
     <?php
@@ -50,44 +50,44 @@ include "header.php";
             foreach ($getProductsById as $value):
 ?>
     <div class="products">
-        <div class="product-image">
+        <div class="product-image1">
             <img src="./img/<?php echo $value['image'] ?>" width="100%">
         </div>
-        <div class="product-details">
-            <div class="product-title"><?php echo $value['name'] ?></div>
-            <p class="product-description"><?php echo $value['description'] ?></p>
+        <div class="product-detail1s">
+            <div class="product-title1"><?php echo $value['name'] ?></div>
+            <p class="product-description1"><?php echo $value['description'] ?></p>
         </div>
-        <div class="product-price"><?php echo $value['price'] ?></div>
-        <div class="product-quantity">
+        <div class="product-price1"><?php echo $value['price'] ?></div>
+        <div class="product-quantity1">
             <input type="number" value="2" min="1">
         </div>
-        <div class="product-removal">
-            <button class="remove-product">
+        <div class="product-removal1">
+            <button class="remove-product1">
                 Remove
             </button>
         </div>
-        <div class="product-line-price"><?php echo number_format($value['price']) ?></div>
+        <div class="product-line-price1"><?php echo number_format($value['price']) ?></div>
     </div>
     <?php endforeach; endif;
     ?>
 
     <div class="totals">
-        <div class="totals-item">
+        <div class="totals-item1">
             <label>Subtotal</label>
-            <div class="totals-value" id="cart-subtotal">71.97</div>
+            <div class="totals-value1" id="cart-subtotal">71.97</div>
         </div>
-        <div class="totals-item">
+        <!-- <div class="totals-item1">
             <label>Tax (5%)</label>
-            <div class="totals-value" id="cart-tax">3.60</div>
+            <div class="totals-value1" id="cart-tax">3.60</div>
         </div>
-        <div class="totals-item">
+        <div class="totals-item1">
             <label>Shipping</label>
-            <div class="totals-value" id="cart-shipping">15.00</div>
+            <div class="totals-value1" id="cart-shipping">15.00</div>
         </div>
-        <div class="totals-item totals-item-total">
+        <div class="totals-item1 totals-item-total">
             <label>Grand Total</label>
-            <div class="totals-value" id="cart-total">90.57</div>
-        </div>
+            <div class="totals-value1" id="cart-total">90.57</div>
+        </div> -->
     </div>
     <div class="check">
         <a href="index.php">

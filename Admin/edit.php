@@ -7,9 +7,8 @@ require "Models/manufacture.php";
 $manufacture = new Manufacture;
 require "Models/protype.php";
 $protype = new protype;
-if(isset($_GET['id'])){
-    $product->editProduct($_GET['id']);
-    if(isset($_POST['submit'])){
+if(isset($_POST['submit'])){
+    if(isset($_GET['id'])){
         $name = $_POST['name'];
         $manu_id = $_POST['manu'];
         $type_id = $_POST['type'];
@@ -18,11 +17,15 @@ if(isset($_GET['id'])){
         $image = $_FILES['image']['name'];
         $fea = $_POST['feature'];
         $crat = $_POST['Created_at'];
-        if($product->editProduct($name,$image,$price,$manu_id,$type_id,$desc,$fea,$crat)){
-            echo "Them thanh cong";
+        if($product->editProduct($name,$image,$price,$manu_id,$type_id,$desc,$fea,$crat,$_GET['id'])){
+            echo "Sua thanh cong";
         }
         else{
-            echo "Them khong duoc";
+            echo "Sua khong duoc";
         }
     }
+    $target_dir = "../img/";
+    $target_file = $target_dir . basename($_FILES["image"]["name"]);
+    move_uploaded_file($_FILES["image"]["tmp_name"],$target_file);
+    header('location:products.php');
 }

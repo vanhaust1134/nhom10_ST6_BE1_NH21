@@ -171,6 +171,11 @@ $protype = new protype;
       </li>
       <li class="nav-item">
         <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+        <i class="fas fa-user"></i>
+        </a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" data-widget="fullscreen" href="#" role="button">
           <i class="fas fa-expand-arrows-alt"></i>
         </a>
       </li>
@@ -178,7 +183,7 @@ $protype = new protype;
         <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
           <i class="fas fa-th-large"></i>
         </a>
-      </li>
+      </li> -->
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -253,6 +258,12 @@ $protype = new protype;
             <a href="addproduct.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>Add Product</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="menuEdit.php" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>Edit Product</p>
             </a>
           </li>
         </ul>

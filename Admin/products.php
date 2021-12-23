@@ -61,9 +61,9 @@
                       <th style="width: 8%" class="text-center">
                           Description
                       </th>
-                      <th style="width: 8%" class="text-center">
+                      <!-- <th style="width: 8%" class="text-center">
                           Feature
-                      </th>
+                      </th> -->
                       <th style="width: 8%" class="text-center">
                           Created at
                       </th>
@@ -85,10 +85,10 @@
                       <td class="project-state"><?php echo $value['manu_name'] ?></td>
                       <td class="project-state"><?php echo $value['type_name'] ?></td>
                       <td class="project-state"><?php echo $value['description'] ?></td>
-                      <td class="project-state"><?php echo $value['feature'] ?></td>
+                      <!-- <td class="project-state"><?php echo $value['feature'] ?></td> -->
                       <td class="project-state"><?php echo $value['created_at'] ?></td>
                       <td class="project-actions text-right">
-                          <a class="btn btn-info btn-sm" href="menuEdit.php?id=<?php echo $value ['id'] ?>">
+                          <a class="btn btn-info btn-sm" href="editproduct.php?id=<?php echo $value ['id'] ?>">
                               <i class="fas fa-pencil-alt">
                               </i>
                               Edit
