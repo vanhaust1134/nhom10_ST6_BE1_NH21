@@ -1,19 +1,11 @@
 <?php
-session_start();
-//session_destroy();
-if(isset($_SESSION['cart'])){
-	//echo "<pre />";
-	var_dump($_SESSION['cart']);
-}
-?>
-<?php
 include "header.php";
 ?>
 
 <!-- CART -->
 <h1 class="shop-cart">Your Cart</h1>
 
-<div class="shopping-cart1">
+<div class="shopping-cart">
 
     <div class="column-labels1">
         <label class="product-image1">Image</label>
@@ -24,56 +16,47 @@ include "header.php";
         <label class="product-line-price1">Total</label>
     </div>
 
-    <?php
-        $id = isset($_GET['id']) ? $_GET['id'] : '';
-        if(isset($_SESSION['cart']))
-        {
-            if(isset($_SESSION['cart'][$id])){
-                $_SESSION['cart'][$id]['qty']++;
-            }
-            else
-            {
-                $_SESSION['cart'][$id]['qty'] = 1;
-            }
-            $_SESSION['success']='Thêm thành công';
-
-        }
-        else
-        {
-            $_SESSION['cart'][$id] = 1;
-            $_SESSION['success']='Tạo mới thành công';
-        }
-        $getProductsById = $product->getProductsById($id);
-        $_SESSION['cart'][$id] = $getProductsById;
-        foreach($_SESSION['cart'][$id] as $value):
-?>
     <div class="products">
         <div class="product-image1">
-            <img src="./img/<?php echo $value['image'] ?>" width="100%">
+            <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg" width="100%">
         </div>
-        <div class="product-detail1s">
-            <div class="product-title1"><?php echo $value['name'] ?></div>
-            <p class="product-description1"><?php echo $value['description'] ?></p>
+        <div class="product-details1">
+            <div class="product-title">Dingo Dog Bones</div>
+            <p class="product-description">The best dog bones of all time. Holy crap. Your dog will be begging for
+                these things! I got curious once and ate one myself. I'm a fan.</p>
         </div>
-<<<<<<< HEAD
-        <div class="product-price1"><?php echo $value['price'] ?></div>
+        <div class="product-price1">12.99</div>
         <div class="product-quantity1">
             <input type="number" value="2" min="1">
-=======
-        <div class="product-price"><?php echo $value['price'] ?></div>
-        <div class="product-quantity">
-            <input type="number" value=<?php echo $_SESSION['cart'][$id]['qty'] ?> min="1">
->>>>>>> bb423c1ac9d843fbd33483c2cc2b4f7d9d1e7a52
         </div>
         <div class="product-removal1">
-            <button class="remove-product1">
+            <button class="remove-product">
                 Remove
             </button>
         </div>
-        <div class="product-line-price1"><?php echo number_format($value['price']) ?></div>
+        <div class="product-line-price1">25.98</div>
     </div>
-    <?php endforeach;
-    ?>
+
+    <div class="products">
+        <div class="product-image1">
+            <img src="https://s.cdpn.io/3/large-NutroNaturalChoiceAdultLambMealandRiceDryDogFood.png" width="100%">
+        </div>
+        <div class="product-details1">
+            <div class="product-title">Nutro™ Adult Lamb and Rice Dog Food</div>
+            <p class="product-description">Who doesn't like lamb and rice? We've all hit the halal cart at 3am while
+                quasi-blackout after a night of binge drinking in Manhattan. Now it's your dog's turn!</p>
+        </div>
+        <div class="product-price1">45.99</div>
+        <div class="product-quantity1">
+            <input type="number" value="1" min="1">
+        </div>
+        <div class="product-removal1">
+            <button class="remove-product">
+                Remove
+            </button>
+        </div>
+        <div class="product-line-price1">45.99</div>
+    </div>
 
     <div class="totals">
         <div class="totals-item1">
@@ -94,9 +77,6 @@ include "header.php";
         </div> -->
     </div>
     <div class="check">
-        <a href="index.php">
-        <button class="checkout">Back</button>
-        </a>
         <button class="checkout">Checkout</button>
     </div>
 
