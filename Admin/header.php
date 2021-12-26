@@ -185,7 +185,6 @@ $protype = new protype;
         </a>
 <<<<<<< HEAD
       </li> -->
-=======
       </li>
       <form action="logout.php" method="post" enctype="multipart/form-data">
         <li class="nav-item d-none d-sm-inline-block">
@@ -194,7 +193,6 @@ $protype = new protype;
 						</div>
         </li>
       </form>
->>>>>>> bb423c1ac9d843fbd33483c2cc2b4f7d9d1e7a52
     </ul>
   </nav>
   <!-- /.navbar -->
@@ -272,11 +270,6 @@ $protype = new protype;
             </a>
           </li>
           <li class="nav-item">
-<<<<<<< HEAD
-            <a href="menuEdit.php" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>Edit Product</p>
-=======
             <a href="addprotype.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>Add Protype</p>
@@ -286,7 +279,6 @@ $protype = new protype;
             <a href="addmanu.php" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>Add manufacture</p>
->>>>>>> bb423c1ac9d843fbd33483c2cc2b4f7d9d1e7a52
             </a>
           </li>
         </ul>

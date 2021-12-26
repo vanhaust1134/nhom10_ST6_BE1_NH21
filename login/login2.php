@@ -4,14 +4,14 @@ require "../config.php";
 require "../models/db.php";
 require "../models/user.php";
 $user = new User;
+$err = [];
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
     if ($user->checkLogin($username, $password)) {
         $_SESSION['user'] = $username;
-        header('location:../Admin');
+        header('location:../index.php');
     } else {
-        header('location:index.php');
+        header('location:index2.php');
     }
 }
-
